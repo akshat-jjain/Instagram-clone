@@ -29,6 +29,14 @@ const dateFormat = (dateStr) => {
     }
     return Math.floor(seconds) + " seconds ago";
 }
+
+const updateDefault = () => {
+    $id('default-pp').src = users[defaultUser];
+    $id('default-pp-1').src = users[defaultUser];
+    $id('default-username').innerText = defaultUser;
+    $id('default-name').innerText = defaultName;
+}
+updateDefault();
 $id("story-card").innerHTML = "";
 for (let i = 0; i < stories.length; i++) {
     $id("story-card").innerHTML += `
