@@ -8,5 +8,5 @@ const users = {
     cousinlove: "https://media.istockphoto.com/photos/learn-to-love-yourself-first-picture-id1291208214?b=1&k=20&m=1291208214&s=170667a&w=0&h=sAq9SonSuefj3d4WKy4KzJvUiLERXge9VgZO-oqKUOo=",
     diva_kaur: "https://img.freepik.com/free-photo/portrait-confident-beautiful-brunette-woman-turning-face-camera-with-dreamy-look-white_1258-19144.jpg?size=626&ext=jpg"
 };
-const defaultUser = "user123";
-const defaultName = "Rocky Gaurd";
+const defaultUser = "wrinkles_ss";
+const defaultName = "Rinkle W";
