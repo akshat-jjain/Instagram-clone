@@ -205,7 +205,6 @@ main {
     color: #262626;
     font-size: 12px;
     overflow: hidden;
-    text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
