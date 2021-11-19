@@ -1,13 +1,40 @@
 const $id = (id) => {
     return document.getElementById(id);
 }
-
+const numWithCom = (num) => {
+    return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+const dateFormat = (dateStr) => {
+    dateStr = new Date(dateStr);
+    let seconds = Math.floor((new Date() - dateStr) / 1000);
+    let interval = seconds / 31536000;
+    if (interval > 1) {
+        return Math.floor(interval) + " years ago";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+        return Math.floor(interval) + " months ago";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+        return Math.floor(interval) + " days ago";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+        return Math.floor(interval) + " hours ago";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+        return Math.floor(interval) + " minutes ago";
+    }
+    return Math.floor(seconds) + " seconds ago";
+}
 $id("story-card").innerHTML = "";
 for (let i = 0; i < stories.length; i++) {
     $id("story-card").innerHTML += `
     <div class="story-card">
         <div class="profile-pic ${stories[i].seen}">
-            <img src=".${stories[i].profile_pic}" alt="" class="profile-img">
+            <img src="${users[stories[i].username]}" alt="" class="profile-img">
         </div>
         <p class="username">${stories[i].username}</p>
     </div>
@@ -20,7 +47,7 @@ for (let i = 0; i < posts.length; i++) {
     <div class="user-info">
         <div class="info">
             <div class="profile-pic">
-                <img src=".${posts[i].profile_pic}" alt="" class="profile-img">
+                <img src="${users[posts[i].username]}" alt="" class="profile-img">
             </div>
             <p class="username">${posts[i].username}</p>
         </div>
@@ -31,7 +58,7 @@ for (let i = 0; i < posts.length; i++) {
             <circle cx="17.5" cy="12" r="1.5"></circle>
         </svg>
     </div>
-    <img src=".${posts[i].posts_img}" alt="">
+    <img src="${posts[i].posts_img}" alt="">
     <div class ="post-details">
     <div class ="post-reactions">
     <svg aria-label="Like" class ="like-ic-em rec-icon" color="#262626" fill="#262626"
@@ -62,14 +89,14 @@ for (let i = 0; i < posts.length; i++) {
     <div class ="likes-div">
     <img src="./assets/images/default-user.png" alt="">
     <p class ="likes-cnt">
-    Liked by <span>user123</span> and <span>${posts[i].likes} others</span>
+    Liked by <span>user123</span> and <span>${numWithCom(posts[i].likes)} others</span>
     </p>
     </div>
     <div class ="caption-div">
     <span>${posts[i].username} </span>${posts[i].caption}
     </div>
-    <div class="view-all-cmt">View all ${posts[i].comments} comments</div>
-    <div class ="post-time">${posts[i].post_time}</div>
+    <div class="view-all-cmt">View all ${numWithCom(posts[i].comments)} comments</div>
+    <div class ="post-time">${dateFormat(posts[i].post_time)}</div>
     <div class="comment-div">
         <svg aria-label="Emoji" class="rec-icon" color="#262626" fill="#262626" height="24"
         role="img" viewBox="0 0 48 48" width="24">
@@ -93,7 +120,7 @@ for (let i = 0; i < suggestions.length; i++) {
     <div class="suggest-card">
         <div class="s-userinfo">
             <div class="profile-pic">
-                <img src=".${suggestions[i].profile_pic}" alt="" class="profile-img">
+                <img src="${users[suggestions[i].username]}" alt="" class="profile-img">
             </div>
             <div class="name-div">
                 <p class="username">${suggestions[i].username}</p>
