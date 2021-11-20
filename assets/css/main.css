@@ -573,4 +573,8 @@ main {
     .rec-icon:last-child {
         margin-right: 0;
     }
+    
+    .post-card:last-child {
+        margin-bottom: 50px;
+    }
 }
