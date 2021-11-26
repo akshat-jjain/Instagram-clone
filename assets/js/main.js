@@ -1,40 +1,8 @@
-const $id = (id) => {
-    return document.getElementById(id);
-}
-const numWithCom = (num) => {
-    return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-}
-const dateFormat = (dateStr) => {
-    dateStr = new Date(dateStr);
-    let seconds = Math.floor((new Date() - dateStr) / 1000);
-    let interval = seconds / 31536000;
-    if (interval > 1) {
-        return Math.floor(interval) + " years ago";
-    }
-    interval = seconds / 2592000;
-    if (interval > 1) {
-        return Math.floor(interval) + " months ago";
-    }
-    interval = seconds / 86400;
-    if (interval > 1) {
-        return Math.floor(interval) + " days ago";
-    }
-    interval = seconds / 3600;
-    if (interval > 1) {
-        return Math.floor(interval) + " hours ago";
-    }
-    interval = seconds / 60;
-    if (interval > 1) {
-        return Math.floor(interval) + " minutes ago";
-    }
-    return Math.floor(seconds) + " seconds ago";
-}
-
 const updateDefault = () => {
-    $id('default-pp').src = users[defaultUser];
-    $id('default-pp-1').src = users[defaultUser];
+    $id('default-pp').src = users[defaultUser].pic;
+    $id('default-pp-1').src = users[defaultUser].pic;
     $id('default-username').innerText = defaultUser;
-    $id('default-name').innerText = defaultName;
+    $id('default-name').innerText = users[defaultUser].name;
 }
 updateDefault();
 $id("story-card").innerHTML = "";
@@ -42,7 +10,7 @@ for (let i = 0; i < stories.length; i++) {
     $id("story-card").innerHTML += `
     <div class="story-card">
         <div class="profile-pic ${stories[i].seen}">
-            <img src="${users[stories[i].username]}" alt="" class="profile-img">
+            <img src="${users[stories[i].username].pic}" alt="" class="profile-img">
         </div>
         <p class="username">${stories[i].username}</p>
     </div>
@@ -55,9 +23,9 @@ for (let i = 0; i < posts.length; i++) {
     <div class="user-info">
         <div class="info">
             <div class="profile-pic">
-                <img src="${users[posts[i].username]}" alt="" class="profile-img">
+                <img src="${users[posts[i].username].pic}" alt="" class="profile-img">
             </div>
-            <p class="username">${posts[i].username}</p>
+            <a href="/profile/?u=${posts[i].username}"><p class="username">${posts[i].username}</p></a>
         </div>
         <svg aria-label="More options" class="options" color="#262626" fill="#262626"
             height="24" role="img" viewBox="0 0 24 24" width="24">
@@ -128,7 +96,7 @@ for (let i = 0; i < suggestions.length; i++) {
     <div class="suggest-card">
         <div class="s-userinfo">
             <div class="profile-pic">
-                <img src="${users[suggestions[i].username]}" alt="" class="profile-img">
+                <img src="${users[suggestions[i].username].pic}" alt="" class="profile-img">
             </div>
             <div class="name-div">
                 <p class="username">${suggestions[i].username}</p>
