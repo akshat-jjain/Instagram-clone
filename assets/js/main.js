@@ -25,7 +25,7 @@ for (let i = 0; i < posts.length; i++) {
             <div class="profile-pic">
                 <img src="${users[posts[i].username].pic}" alt="" class="profile-img">
             </div>
-            <a href="/profile/?u=${posts[i].username}"><p class="username">${posts[i].username}</p></a>
+            <a href="/Instagram-clone/profile/?u=${posts[i].username}"><p class="username">${posts[i].username}</p></a>
         </div>
         <svg aria-label="More options" class="options" color="#262626" fill="#262626"
             height="24" role="img" viewBox="0 0 24 24" width="24">
