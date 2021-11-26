@@ -1,0 +1,118 @@
+.top-part {
+    width: 100%;
+    position: relative;
+    top: 82px;
+    display: flex;
+}
+
+.left-part {
+    width: 30%;
+}
+
+.right-part {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #262626;
+}
+
+.rp1,
+.rp2,
+.rp3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start
+}
+
+.profile-pic {
+    width: 168px;
+    height: 168px;
+    padding: 3px;
+}
+
+.drop-arrow {
+    height: 30px;
+    width: 30px;
+}
+
+.rp1 .username-div {
+    color: #262626;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rp1 .username {
+    width: 100%;
+    margin: -5px 0 -6px;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 32px;
+    max-width: fit-content;
+}
+
+.btns-div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.btns-div button {
+    margin-left: 10px;
+    background: transparent;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    height: 30px;
+}
+
+.msg-btn {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 14px;
+    color: #262626;
+    line-height: 18px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 9px;
+}
+
+.rp2 p:not(:first-child) {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.rp2 p span {
+    color: #262626;
+    font-weight: 600;
+}
+
+@media (max-width:735px) {
+    .left-part {
+        width: 20%;
+    }
+
+    .profile-pic {
+        margin-left: 10px;
+        width: 64px;
+        height: 64px;
+        padding: 2px;
+    }
+
+    .rp1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rp1 .username-div {
+        width: 100%;
+    }
+
+    .rp1.btns-div {
+        width: 100%;
+    }
+}
