@@ -14,4 +14,14 @@ const stories = [
         seen: "seen",
         link: "#"
     },
+    {
+        username: "cyrus_real",
+        seen: "unseen",
+        link: "#"
+    },
+    {
+        username: "boysideboard",
+        seen: "seen",
+        link: "#"
+    },
 ];
