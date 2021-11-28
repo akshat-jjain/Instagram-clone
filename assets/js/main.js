@@ -25,7 +25,7 @@ for (let i = 0; i < posts.length; i++) {
             <div class="profile-pic">
                 <img src="${users[posts[i].username].pic}" alt="" class="profile-img" oncontextmenu="return false;">
             </div>
-            <a href="/profile/?u=${posts[i].username}"><p class="username">${posts[i].username}</p></a>
+            <a href="/Instagram-clone/profile/?u=${posts[i].username}"><p class="username">${posts[i].username}</p></a>
         </div>
         <svg aria-label="More options" class="options" color="#262626" fill="#262626"
             height="24" role="img" viewBox="0 0 24 24" width="24">
@@ -66,11 +66,11 @@ for (let i = 0; i < posts.length; i++) {
     <div class ="likes-div">
     <img src="${users[posts[i].liked_by].pic}" alt="" oncontextmenu="return false;">
     <p class ="likes-cnt" id="${posts[i].id}-lcnt">
-    Liked by <span><a href="/profile/?u=${posts[i].liked_by}">${posts[i].liked_by}</a></span> and <span>${numWithCom(posts[i].likes)} others</span>
+    Liked by <span><a href="/Instagram-clone/profile/?u=${posts[i].liked_by}">${posts[i].liked_by}</a></span> and <span>${numWithCom(posts[i].likes)} others</span>
     </p>
     </div>
     <div class ="caption-div">
-    <span><a href="/profile/?u=${posts[i].username}">${posts[i].username}</a> </span>${posts[i].caption}
+    <span><a href="/Instagram-clone/profile/?u=${posts[i].username}">${posts[i].username}</a> </span>${posts[i].caption}
     </div>
     <div class="view-all-cmt">View all ${numWithCom(posts[i].comments)} comments</div>
     <div class ="post-time">${dateFormat(posts[i].post_time)}</div>
@@ -97,12 +97,12 @@ for (let i = 0; i < suggestions.length; i++) {
     <div class="suggest-card">
         <div class="s-userinfo">
             <div class="profile-pic">
-            <a href="/profile/?u=${suggestions[i].username}">
+            <a href="/Instagram-clone/profile/?u=${suggestions[i].username}">
                 <img src="${users[suggestions[i].username].pic}" alt="" class="profile-img">
             </a>
             </div>
             <div class="name-div">
-                <a href="/profile/?u=${suggestions[i].username}">
+                <a href="/Instagram-clone/profile/?u=${suggestions[i].username}">
                     <p class="username">${suggestions[i].username}</p>
                 </a>
                 <p class="fullname">Followed by ${suggestions[i].followed_by}</p>
