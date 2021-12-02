@@ -1,30 +1,281 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Create • Instagram Clone</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create • Instagram Clone</title>
+        <link rel="stylesheet" href="/Instagram-clone/assets/css/common.css">
+        <link rel="stylesheet" href="/Instagram-clone/assets/css/create.css">
+        <link rel="shortcut icon" href="/Instagram-clone/assets/images/favicon.ico" type="image/x-icon">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/Instagram-clone/assets/users.js"></script>
+        <script src="/Instagram-clone/assets/stories.js"></script>
+        <script src="/Instagram-clone/assets/posts.js"></script>
+        <script src="/Instagram-clone/assets/suggestions.js"></script>
+        <script src="/Instagram-clone/assets/js/common.js"></script>
+    </head>
 
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
+    <body>
+        <header>
+            <div class="nav-container">
+                <div class="logo-div">
+                    <img src="/Instagram-clone/assets/images/logo-name.png" alt="Instagram">
+                </div>
+                <div class="search-div">
+                    <input type="search" name="q" id="search" class="search-bar" placeholder="Search">
+                </div>
+                <div class="opt-div">
+                    <div class="home-ic nav-icons mob-nav">
+                        <a href="/Instagram-clone/">
+                            <svg aria-label="Home" class="_8-yf5 " color="#262626" fill="#262626" height="22" role="img"
+                                viewBox="0 0 48 48" width="22">
+                                <path
+                                    d="M45.5 48H30.1c-.8 0-1.5-.7-1.5-1.5V34.2c0-2.6-2.1-4.6-4.6-4.6s-4.6 2.1-4.6 4.6v12.3c0 .8-.7 1.5-1.5 1.5H2.5c-.8 0-1.5-.7-1.5-1.5V23c0-.4.2-.8.4-1.1L22.9.4c.6-.6 1.6-.6 2.1 0l21.5 21.5c.3.3.4.7.4 1.1v23.5c.1.8-.6 1.5-1.4 1.5z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="direct-ic nav-icons">
+                        <a href="/Instagram-clone/inbox/">
+                            <svg aria-label="Messenger" class="_8-yf5 " color="#262626" fill="#262626" height="22"
+                                role="img" viewBox="0 0 48 48" width="22">
+                                <path
+                                    d="M36.2 16.7L29 22.2c-.5.4-1.2.4-1.7 0l-5.4-4c-1.6-1.2-3.9-.8-5 .9l-6.8 10.7c-.7 1 .6 2.2 1.6 1.5l7.3-5.5c.5-.4 1.2-.4 1.7 0l5.4 4c1.6 1.2 3.9.8 5-.9l6.8-10.7c.6-1.1-.7-2.2-1.7-1.5zM24 1C11 1 1 10.5 1 23.3 1 30 3.7 35.8 8.2 39.8c.4.3.6.8.6 1.3l.2 4.1c0 1 .9 1.8 1.8 1.8.2 0 .5 0 .7-.2l4.6-2c.2-.1.5-.2.7-.2.2 0 .3 0 .5.1 2.1.6 4.3.9 6.7.9 13 0 23-9.5 23-22.3S37 1 24 1zm0 41.6c-2 0-4-.3-5.9-.8-.4-.1-.8-.2-1.3-.2-.7 0-1.3.1-2 .4l-3 1.3V41c0-1.3-.6-2.5-1.6-3.4C6.2 34 4 28.9 4 23.3 4 12.3 12.6 4 24 4s20 8.3 20 19.3-8.6 19.3-20 19.3z">
+                                </path>
+                            </svg></a>
+                    </div>
+                    <div class="create-ic nav-icons">
+                        <a href="/Instagram-clone/create/">
+                            <svg aria-label="New Post" class="_8-yf5 " color="#262626" fill="#262626" height="22"
+                                role="img" viewBox="0 0 48 48" width="22">
+                                <path
+                                    d="M31.8 48H16.2c-6.6 0-9.6-1.6-12.1-4C1.6 41.4 0 38.4 0 31.8V16.2C0 9.6 1.6 6.6 4 4.1 6.6 1.6 9.6 0 16.2 0h15.6c6.6 0 9.6 1.6 12.1 4C46.4 6.6 48 9.6 48 16.2v15.6c0 6.6-1.6 9.6-4 12.1-2.6 2.5-5.6 4.1-12.2 4.1zM16.2 3C10 3 7.8 4.6 6.1 6.2 4.6 7.8 3 10 3 16.2v15.6c0 6.2 1.6 8.4 3.2 10.1 1.6 1.6 3.8 3.1 10 3.1h15.6c6.2 0 8.4-1.6 10.1-3.2 1.6-1.6 3.1-3.8 3.1-10V16.2c0-6.2-1.6-8.4-3.2-10.1C40.2 4.6 38 3 31.8 3H16.2z">
+                                </path>
+                                <path
+                                    d="M36.3 25.5H11.7c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h24.6c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z">
+                                </path>
+                                <path
+                                    d="M24 37.8c-.8 0-1.5-.7-1.5-1.5V11.7c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v24.6c0 .8-.7 1.5-1.5 1.5z">
+                                </path>
+                            </svg></a>
+                    </div>
+                    <div class="explore-ic nav-icons mob-nav-hide">
+                        <a href="/Instagram-clone/explore/">
+                            <svg aria-label="Find People" class="_8-yf5 " color="#262626" fill="#262626" height="22"
+                                role="img" viewBox="0 0 48 48" width="22">
+                                <path clip-rule="evenodd"
+                                    d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zm0 45C12.4 45 3 35.6 3 24S12.4 3 24 3s21 9.4 21 21-9.4 21-21 21zm10.2-33.2l-14.8 7c-.3.1-.6.4-.7.7l-7 14.8c-.3.6-.2 1.3.3 1.7.3.3.7.4 1.1.4.2 0 .4 0 .6-.1l14.8-7c.3-.1.6-.4.7-.7l7-14.8c.3-.6.2-1.3-.3-1.7-.4-.5-1.1-.6-1.7-.3zm-7.4 15l-5.5-5.5 10.5-5-5 10.5z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="activity-ic nav-icons mob-nav">
+                        <a href="/Instagram-clone/activity/">
+                            <svg aria-label="Activity Feed" class="_8-yf5 " color="#262626" fill="#262626" height="22"
+                                role="img" viewBox="0 0 48 48" width="22">
+                                <path
+                                    d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
+                                </path>
+                            </svg></a>
+                    </div>
+                    <div class="profile-ic nav-icons mob-nav">
+                        <div class="bor-contain"></div>
+                        <div class="img-contain">
+                            <img src="/Instagram-clone/assets/images/default-user.png" alt="profile pic" class="profile-pic-ic"
+                                id="default-pp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mob-nav-div">
+            <div class="home-ic">
+                <a href="/Instagram-clone/">
+                    <svg aria-label="Home" class="_8-yf5 " color="#262626" fill="#262626" height="22" role="img"
+                        viewBox="0 0 48 48" width="22">
+                        <path
+                            d="M45.5 48H30.1c-.8 0-1.5-.7-1.5-1.5V34.2c0-2.6-2.1-4.6-4.6-4.6s-4.6 2.1-4.6 4.6v12.3c0 .8-.7 1.5-1.5 1.5H2.5c-.8 0-1.5-.7-1.5-1.5V23c0-.4.2-.8.4-1.1L22.9.4c.6-.6 1.6-.6 2.1 0l21.5 21.5c.3.3.4.7.4 1.1v23.5c.1.8-.6 1.5-1.4 1.5z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="search-ic">
+                <a href="/Instagram-clone/">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true" role="img" width="22" height="22" preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M17.545 15.467l-3.779-3.779a6.15 6.15 0 0 0 .898-3.21c0-3.417-2.961-6.377-6.378-6.377A6.185 6.185 0 0 0 2.1 8.287c0 3.416 2.961 6.377 6.377 6.377a6.15 6.15 0 0 0 3.115-.844l3.799 3.801a.953.953 0 0 0 1.346 0l.943-.943c.371-.371.236-.84-.135-1.211zM4.004 8.287a4.282 4.282 0 0 1 4.282-4.283c2.366 0 4.474 2.107 4.474 4.474a4.284 4.284 0 0 1-4.283 4.283c-2.366-.001-4.473-2.109-4.473-4.474z"
+                            fill="#262626" />
+                    </svg>
+                </a>
+            </div>
+            <div class="reels-ic">
+                <a href="/Instagram-clone/reels/">
+                    <svg aria-label="" class="_8-yf5 " color="#262626" fill="#262626" height="22" role="img"
+                        viewBox="0 0 48 48" width="22">
+                        <path
+                            d="M31.5 28.2l-11.2-6.5c-.5-.3-1-.3-1.5 0-.5.2-.8.7-.8 1.3v13c0 .5.3 1 .8 1.3.2.1.5.2.7.2.3 0 .5-.1.8-.2l11.2-6.5c.5-.3.7-.8.7-1.3s-.3-1-.7-1.3zM43.9 4c-2.5-2.4-5.5-4-12.2-4H16.2C9.6 0 6.6 1.6 4 4.1 1.6 6.6 0 9.6 0 16.2v15.5c0 6.6 1.6 9.7 4.1 12.2 2.5 2.4 5.5 4 12.2 4h15.5c6.6 0 9.7-1.6 12.2-4.1 2.4-2.5 4-5.5 4-12.2V16.2c0-6.6-1.6-9.6-4.1-12.2zM31.8 3c6.3 0 8.4 1.6 10 3.2 1.2 1.2 2.3 2.7 2.9 5.8h-9.3l-5.1-9h1.5zM16.2 3h10.5l5.1 9h-12l-5.1-9h1.5zm-10 3.2C7.3 5.1 8.7 4 11.5 3.4l4.9 8.6H3.3C3.9 8.9 5 7.4 6.2 6.2zM45 31.8c0 6.3-1.6 8.4-3.2 10-1.6 1.6-3.8 3.2-10 3.2H16.2c-6.3 0-8.4-1.6-10-3.2C4.6 40.2 3 38 3 31.8V15h42v16.8z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="activity-ic">
+                <a href="/Instagram-clone/activity/">
+                    <svg aria-label="Activity Feed" class="_8-yf5 " color="#262626" fill="#262626" height="22"
+                        role="img" viewBox="0 0 48 48" width="22">
+                        <path
+                            d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
+                        </path>
+                    </svg></a>
+            </div>
+            <div class="profile-ic">
+                <div class="bor-contain"></div>
+                <div class="img-contain">
+                    <img src="/Instagram-clone/assets/images/default-user.png" alt="profile pic" class="profile-pic-ic" id="default-pp">
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="main-container">
+                <div class="left-part">
+                    <ul class="tab-btn">
+                        <li class="tab-box active" onclick="tabSwitcher(event,'user-form')" id="default">User Info</li>
+                        <li class="tab-box" onclick="tabSwitcher(event,'story-form')">Story Info</li>
+                        <li class="tab-box" onclick="tabSwitcher(event,'post-form')">Post Info</li>
+                        <li class="tab-box" onclick="tabSwitcher(event,'suggestion-form')">Suggestion Info</li>
+                        <li class="tab-box" onclick="tabSwitcher(event,'preview-tab')">Preview</li>
+                        <li class="tab-box" onclick="tabSwitcher(event,'code-tab')">Code</li>
+                    </ul>
+                </div>
+                <div class="right-part">
+                    <form action="" method="post" id="user-form" class="tab">
+                        <div class="all-input-divs">
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="pic" class="inp-labels">Profile Pic Url</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="url" name="pic" id="pic" class="inputs"
+                                        placeholder="/assets/images/default-user.png" />
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="username" class="inp-labels">Username</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="text" name="username" id="username" class="inputs"
+                                        placeholder="akshat-jjain" />
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="fullname" class="inp-labels">Name</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="text" name="fullname" id="name" class="inputs"
+                                        placeholder="John Mathew" />
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="posts" class="inp-labels">Posts</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="number" name="posts" id="posts" class="inputs" placeholder="100" />
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="followers" class="inp-labels">Followers</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="number" name="followers" id="followers" class="inputs"
+                                        placeholder="25000" />
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="following" class="inp-labels">Following</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="number" name="following" id="following" class="inputs"
+                                        placeholder="1200" />
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="bio" class="inp-labels">Bio</label>
+                                </aside>
+                                <div class="input-div">
+                                    <textarea name="bio" id="bio" class="inputs" placeholder="Love to code"></textarea>
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <div class="input-div">
+                                    <input type="checkbox" name="private" id="private" style="display: none;"
+                                        class="inputs" checked />
+                                    <div class="check-ic" id="private-check"></div>
+                                    <span class="label-span">Private</span>
+                                </div>
+                            </div>
+                            <div class="input-div">
+                                <input type="button" name="submit" id="submit" class="sub" value="Create">
+                            </div>
+                        </div>
+                    </form>
+                    <form action="" method="post" id="story-form" class="tab">
+                        <div class="all-input-divs">
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="pic" class="inp-labels">Profile Pic Url</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="url" name="pic" id="pic" class="inputs"
+                                        placeholder="/assets/images/default-user.png" />
+                                </div>
+                            </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="username" class="inp-labels">Username</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="text" name="username" id="username" class="inputs"
+                                        placeholder="akshat-jjain" />
+                                </div>
+                            </div>
+                            <div class="input-div">
+                                <input type="checkbox" name="seen" id="seen" style="display: none;"
+                                    class="inputs" checked />
+                                <div class="check-ic" id="seen-check"></div>
+                                <span class="label-span">Seen</span>
+                            </div>
+                        </div>
+                    </form>
+                    <form action="" method="post" id="post-form" class="tab">
+                        <div class="all-input-divs">
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="caption" class="inp-labels">Caption</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="text" name="caption" id="caption" class="inputs"
+                                        placeholder="akshat-jjain" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form action="" method="post" id="suggestion-form" class="tab"></form>
+                    <div class="tab" id="preview-tab"></div>
+                    <div class="tab" id="code-tab"></div>
+                </div>
+            </div>
+        </main>
+        <script src="/Instagram-clone/assets/js/create.js"></script>
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    </body>
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-</head>
-
-<body>
-  <!-- your content here... -->
-  <script src="js/scripts.js"></script>
-</body>
 </html>
