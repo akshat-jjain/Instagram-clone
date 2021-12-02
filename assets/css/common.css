@@ -25,10 +25,15 @@ svg {
 }
 
 body,
-input {
+input,
+textarea,
+button {
+    color: #262626;
     background: #fafafa;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     position: relative;
+    font-size: 14px;
+    line-height: 18px;
 }
 
 header {
@@ -239,6 +244,11 @@ main {
 
     .search-div {
         display: none;
+    }
+
+    .nav-container,
+    .main-container {
+        width: 95%;
     }
 }
 
