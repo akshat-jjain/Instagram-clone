@@ -172,6 +172,9 @@ aside {
     .input-div-cont {
         flex-direction: column;
         margin-bottom: 8px;
-
+    }
+    .input-div,
+    aside {
+        width: 100%;
     }
 }
