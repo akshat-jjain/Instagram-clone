@@ -17,3 +17,56 @@ const tabSwitcher = (evt, tab) => {
     evt.currentTarget.className += " active";
 };
 $id("default").click();
+$id("liked-by-data").innerHTML = ``;
+for (let i = 0; i < allUsers.length; i++) {
+    $id("liked-by-data").innerHTML += `<option value="${allUsers[i]}">${allUsers[i]}</option>`;
+}
+const loadUser = () => {
+    let form_fields = $id("user-form").elements
+    console.log(form_fields);
+    let error = false;
+    $id("user-errors").innerHTML = '';
+    for (let i = 0; i < form_fields.length; i++) {
+        if (form_fields[i].value == "") {
+            $id("user-errors").innerHTML += `<li>${form_fields[i].name} is required.</li>`;
+            error = true;
+        }
+    }
+    if (error) { return false; }
+    let r = `"`;
+    let e = `'`;
+    let bio = $id("bio").value.replaceAll('\n', '<br>').replaceAll(r, e);
+    $id("ucb").value = `${$id("username").value}: {
+        id: ${(allUsers.length) + 1},
+        pic: "${$id("pic").value}",
+        name: "${$id("name").value}",
+        posts: ${$id("posts").value},
+        followers: ${$id("followers").value},
+        following: ${$id("following").value},
+        bio: "${bio}",
+        private: ${$id("private").checked},
+    },`;
+    $id("t1").click();
+}
+const copytext = (id) => {
+    const el = $id(id);
+    el.select();
+    document.execCommand('copy');
+}
+$("textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+}).on("input", function () {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+});
+
+$("textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+}).on("click", function () {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+});
+const skip = (s) => {
+    s = s.replaceAll("skip", "t");
+    $id(s).click();
+}
