@@ -50,7 +50,8 @@ form {
     display: none;
 }
 
-.input-div-cont:first-child {
+.input-div-cont:first-child,
+.code-div:first-child {
     margin-top: 20px;
 }
 
@@ -76,6 +77,11 @@ form {
 textarea.inputs {
     resize: vertical;
     padding: 6px 10px;
+}
+
+.inputs:invalid,
+.inputs:invalid:focus {
+    border: 1px solid red;
 }
 
 .inputs:focus {
@@ -106,6 +112,18 @@ aside {
     cursor: pointer;
 }
 
+.skip {
+    border: 0;
+    color: #0095f6;
+    padding: 0;
+    text-align: center;
+    font-weight: 600;
+    user-select: none;
+    width: auto;
+    cursor: pointer;
+    float: right;
+}
+
 .check-ic {
     border: 1px solid #dbdbdb;
     border-radius: 3px;
@@ -121,6 +139,43 @@ aside {
     color: #262626;
     font-size: 14px;
     line-height: 14px;
+}
+
+.code-head {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+.code-head span {
+    float: right;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.code-body {
+    padding: 0 20px;
+    height: 100%;
+}
+
+.code-body textarea {
+    min-height: 50px;
+    height: 100%;
+    max-width: 100%;
+    resize: none;
+    /* white-space: pre-wrap; */
+}
+
+.error {
+    color: red;
+    display: block;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.error li {
+    margin: 10px;
 }
 
 #private:checked~.check-ic::before,
@@ -164,6 +219,11 @@ aside {
         display: none;
     }
 
+    aside,
+    .input-div {
+        width: 100%;
+    }
+
     .inp-labels,
     .input-div {
         padding: 0 20px;
@@ -172,9 +232,6 @@ aside {
     .input-div-cont {
         flex-direction: column;
         margin-bottom: 8px;
-    }
-    .input-div,
-    aside {
-        width: 100%;
+
     }
 }
