@@ -195,7 +195,7 @@ main {
     bottom: 0;
     left: 0;
     margin: auto;
-    background: url("/assets/images/like-em.png") no-repeat center/contain;
+    background: url("https://raw.githubusercontent.com/akshat-jjain/Instagram-clone/main/assets/images/like-em.png") no-repeat center/contain;
     opacity: 0;
     transform: scale(0);
 }
