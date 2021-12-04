@@ -18,8 +18,10 @@ const tabSwitcher = (evt, tab) => {
 };
 $id("default").click();
 $id("liked-by-data").innerHTML = ``;
+$id("followed-by-data").innerHTML = ``;
 for (let i = 0; i < allUsers.length; i++) {
     $id("liked-by-data").innerHTML += `<option value="${allUsers[i]}">${allUsers[i]}</option>`;
+    $id("followed-by-data").innerHTML += `<option value="${allUsers[i]}">${allUsers[i]}</option>`;
 }
 const loadUser = () => {
     let form_fields = $id("user-form").elements;
@@ -99,6 +101,24 @@ const loadPost = () => {
         link: "#"
     },`;
     $id("t3").click();
+}
+const loadSuggestion = () => {
+    let form_fields = $id("suggestion-form").elements;
+    let error = false;
+    $id("suggestion-errors").innerHTML = '';
+    for (let i = 0; i < form_fields.length; i++) {
+        if (form_fields[i].value == "") {
+            $id("suggestion-errors").innerHTML += `<li>${form_fields[i].name} is required.</li>`;
+            error = true;
+        }
+    }
+    if (error) { return false; }
+    let username = $id("sst-username").value;
+    $id("sncb").value = `{
+        username: "${username}",
+        followed_by: "${$id("followed-by").value}",
+},`;
+    $id("t4").click();
 }
 const copytext = (id) => {
     const el = $id(id);
