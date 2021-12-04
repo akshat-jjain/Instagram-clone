@@ -33,10 +33,15 @@ const loadUser = () => {
         }
     }
     if (error) { return false; }
+    let username = $id("username").value;
+    if (allUsers.find(user => user == username)) {
+        $id("user-errors").innerHTML = `<li>${username} username is already used.</li>`;
+        return false
+    }
     let r = `"`;
     let e = `'`;
     let bio = $id("bio").value.replaceAll('\n', '<br>').replaceAll(r, e);
-    $id("ucb").value = `${$id("username").value}: {
+    $id("ucb").value = `${username}: {
         id: ${(allUsers.length) + 1},
         pic: "${$id("pic").value}",
         name: "${$id("name").value}",
