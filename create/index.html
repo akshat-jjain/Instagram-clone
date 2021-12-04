@@ -236,7 +236,7 @@
                                 </aside>
                                 <div class="input-div">
                                     <input type="text" name="username" id="st-username" class="inputs"
-                                        placeholder="akshat-jjain" />
+                                        placeholder="akshat-jjain" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" />
                                 </div>
                             </div>
                             <div class="input-div">
@@ -262,7 +262,7 @@
                                 </aside>
                                 <div class="input-div">
                                     <input type="text" name="username" id="pt-username" class="inputs"
-                                        placeholder="akshat-jjain">
+                                        placeholder="akshat-jjain" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" />
                                 </div>
                             </div>
                             <div class="input-div-cont">
@@ -280,7 +280,7 @@
                                 </aside>
                                 <div class="input-div">
                                     <input type="text" name="caption" id="caption" class="inputs"
-                                        placeholder="akshat-jjain" />
+                                        placeholder="Smile a little more, regret a little less." />
                                 </div>
                             </div>
                             <div class="input-div-cont">
@@ -297,7 +297,8 @@
                                 </aside>
                                 <div class="input-div">
                                     <input type="text" name="liked-by" id="liked-by" class="inputs"
-                                        placeholder="akshat-jjain" list="liked-by-data">
+                                        placeholder="akshat-jjain" list="liked-by-data"
+                                        pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" />
                                     <datalist id="liked-by-data"></datalist>
                                 </div>
                             </div>
@@ -326,7 +327,7 @@
                                 </aside>
                                 <div class="input-div">
                                     <input type="text" name="username" id="sst-username" class="inputs"
-                                        placeholder="akshat-jjain">
+                                        placeholder="akshat-jjain" pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" />
                                 </div>
                             </div>
                             <div class="input-div-cont">
@@ -335,7 +336,8 @@
                                 </aside>
                                 <div class="input-div">
                                     <input type="text" name="followed-by" id="followed-by" class="inputs"
-                                        placeholder="akshat-jjain" list="followed-by-data" />
+                                        placeholder="akshat-jjain" list="followed-by-data"
+                                        pattern="^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$" />
                                     <datalist id="followed-by-data"></datalist>
                                 </div>
                             </div>
@@ -348,7 +350,30 @@
                         </div>
                     </form>
                     <div class="tab" id="preview-tab">
-                        <div></div>
+                        <div class="profile-pre">
+                            <div class="pre-head">Profile Preview</div>
+                            <div class="pre-body" id="profile-pre">
+                                Profile preview will be shown here
+                            </div>
+                        </div>
+                        <div class="story-pre">
+                            <div class="pre-head">Story Preview</div>
+                            <div class="pre-body" id="story-pre">
+                                Story preview will be shown here
+                            </div>
+                        </div>
+                        <div class="post-pre">
+                            <div class="pre-head">Post Preview</div>
+                            <div class="pre-body" id="post-pre">
+                                Post preview will be shown here
+                            </div>
+                        </div>
+                        <div class="suggestion-pre">
+                            <div class="pre-head">Suggestion Preview</div>
+                            <div class="pre-body" id="suggestion-pre">
+                                Suggestion preview will be shown here
+                            </div>
+                        </div>
                     </div>
                     <div class="tab" id="code-tab">
                         <div class="user-code code-div">
