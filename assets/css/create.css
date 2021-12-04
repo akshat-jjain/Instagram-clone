@@ -141,7 +141,8 @@ aside {
     line-height: 14px;
 }
 
-.code-head {
+.code-head,
+.pre-head {
     font-weight: 600;
     font-size: 16px;
     padding: 0 20px;
@@ -153,9 +154,17 @@ aside {
     cursor: pointer;
 }
 
-.code-body {
+.code-body,
+.pre-body {
     padding: 0 20px;
     height: 100%;
+}
+
+.pre-body {
+    margin: 0 20px;
+    border: 1px solid #dbdbdb;
+    min-height: 50px;
+    padding: 20px;
 }
 
 .code-body textarea {
@@ -163,7 +172,6 @@ aside {
     height: 100%;
     max-width: 100%;
     resize: none;
-    /* white-space: pre-wrap; */
 }
 
 .error {
