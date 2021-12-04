@@ -65,10 +65,6 @@ const loadStory = () => {
     if (error) { return false; }
     let seen = ($id("seen").checked) ? "seen" : "unseen";
     let username = $id("st-username").value;
-    if (!allUsers.find(user => user == username)) {
-        $id("post-errors").innerHTML = `<li>${username} username is already used.</li>`;
-        return false
-    }
     $id("scb").value = `{
     id: AVSD6SI${(allUsers.length) + 1},
     username: "${username}",
