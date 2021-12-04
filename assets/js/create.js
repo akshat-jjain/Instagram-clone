@@ -22,8 +22,7 @@ for (let i = 0; i < allUsers.length; i++) {
     $id("liked-by-data").innerHTML += `<option value="${allUsers[i]}">${allUsers[i]}</option>`;
 }
 const loadUser = () => {
-    let form_fields = $id("user-form").elements
-    console.log(form_fields);
+    let form_fields = $id("user-form").elements;
     let error = false;
     $id("user-errors").innerHTML = '';
     for (let i = 0; i < form_fields.length; i++) {
@@ -52,6 +51,58 @@ const loadUser = () => {
         private: ${$id("private").checked},
     },`;
     $id("t1").click();
+}
+const loadStory = () => {
+    let form_fields = $id("story-form").elements;
+    let error = false;
+    $id("story-errors").innerHTML = '';
+    for (let i = 0; i < form_fields.length; i++) {
+        if (form_fields[i].value == "") {
+            $id("story-errors").innerHTML += `<li>${form_fields[i].name} is required.</li>`;
+            error = true;
+        }
+    }
+    if (error) { return false; }
+    let seen = ($id("seen").checked) ? "seen" : "unseen";
+    let username = $id("st-username").value;
+    if (!allUsers.find(user => user == username)) {
+        $id("post-errors").innerHTML = `<li>${username} username is already used.</li>`;
+        return false
+    }
+    $id("scb").value = `{
+    id: AVSD6SI${(allUsers.length) + 1},
+    username: "${username}",
+    seen: "${seen}",
+    link: "#",
+},`;
+    $id("t2").click();
+}
+const loadPost = () => {
+    let form_fields = $id("post-form").elements;
+    let error = false;
+    $id("post-errors").innerHTML = '';
+    for (let i = 0; i < form_fields.length; i++) {
+        if (form_fields[i].value == "") {
+            $id("post-errors").innerHTML += `<li>${form_fields[i].name} is required.</li>`;
+            error = true;
+        }
+    }
+    if (error) { return false; }
+    let username = $id("pt-username").value;
+    let r = `"`;
+    let e = `'`;
+    let caption = $id("caption").value.replaceAll('\n', '<br>').replaceAll(r, e);
+    $id("pcb").value = `AA${allUsers.length+1}xVFYerX: {
+        username: "${username}",
+        posts_img: "${$id("post-pic").value}",
+        caption: "${caption}",
+        likes: ${$id("likes").value},
+        liked_by: "${$id("liked-by").value}",
+        comments: ${$id("comments").value},
+        post_time: "${new Date()}",
+        link: "#"
+    },`;
+    $id("t3").click();
 }
 const copytext = (id) => {
     const el = $id(id);
