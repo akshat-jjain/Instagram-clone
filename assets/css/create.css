@@ -215,6 +215,10 @@ aside {
         width: 100%;
     }
 
+    .right-part {
+        margin-bottom: 100px;
+    }
+
     .left-part {
         display: none;
     }
