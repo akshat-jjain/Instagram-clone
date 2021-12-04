@@ -79,8 +79,8 @@
                     <div class="profile-ic nav-icons mob-nav">
                         <div class="bor-contain"></div>
                         <div class="img-contain">
-                            <img src="/Instagram-clone/assets/images/default-user.png" alt="profile pic" class="profile-pic-ic"
-                                id="default-pp">
+                            <img src="/Instagram-clone/assets/images/default-user.png" alt="profile pic"
+                                class="profile-pic-ic" id="default-pp">
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,8 @@
             <div class="profile-ic">
                 <div class="bor-contain"></div>
                 <div class="img-contain">
-                    <img src="/Instagram-clone/assets/images/default-user.png" alt="profile pic" class="profile-pic-ic" id="default-pp">
+                    <img src="/Instagram-clone/assets/images/default-user.png" alt="profile pic" class="profile-pic-ic"
+                        id="default-pp">
                 </div>
             </div>
         </div>
@@ -245,7 +246,8 @@
                                 <span class="label-span">Seen</span>
                             </div>
                             <div class="input-div">
-                                <input type="button" name="submit" id="submit" class="sub" value="Create" onclick="loadStory()" />
+                                <input type="button" name="submit" id="submit" class="sub" value="Create"
+                                    onclick="loadStory()" />
                                 <input type="button" name="Skip" id="skip2" class="skip" value="Skip & Next"
                                     onclick="skip(this.id)" />
                             </div>
@@ -308,7 +310,8 @@
                                 </div>
                             </div>
                             <div class="input-div">
-                                <input type="button" name="submit" id="submit" class="sub" value="Create"  onclick="loadPost()" />
+                                <input type="button" name="submit" id="submit" class="sub" value="Create"
+                                    onclick="loadPost()" />
                                 <input type="button" name="Skip" id="skip3" class="skip" value="Skip & Next"
                                     onclick="skip(this.id)" />
                             </div>
@@ -316,17 +319,29 @@
                     </form>
                     <form action="" method="post" id="suggestion-form" class="tab">
                         <div class="all-input-divs">
+                            <ul class="input-div-cont error" id="suggestion-errors"></ul>
                             <div class="input-div-cont">
                                 <aside>
                                     <label for="username" class="inp-labels">Username</label>
                                 </aside>
                                 <div class="input-div">
-                                    <input type="text" name="username" id="username" class="inputs"
+                                    <input type="text" name="username" id="sst-username" class="inputs"
                                         placeholder="akshat-jjain">
                                 </div>
                             </div>
+                            <div class="input-div-cont">
+                                <aside>
+                                    <label for="followed-by" class="inp-labels">Followed By</label>
+                                </aside>
+                                <div class="input-div">
+                                    <input type="text" name="followed-by" id="followed-by" class="inputs"
+                                        placeholder="akshat-jjain" list="followed-by-data" />
+                                    <datalist id="followed-by-data"></datalist>
+                                </div>
+                            </div>
                             <div class="input-div">
-                                <input type="button" name="submit" id="submit" class="sub" value="Create" />
+                                <input type="button" name="submit" id="submit" class="sub" value="Create"
+                                    onclick="loadSuggestion()" />
                                 <input type="button" name="Skip" id="skip4" class="skip" value="Skip & Next"
                                     onclick="skip(this.id)" />
                             </div>
