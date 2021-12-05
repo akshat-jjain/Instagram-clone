@@ -51,7 +51,8 @@ form {
 }
 
 .input-div-cont:first-child,
-.code-div:first-child {
+.code-div:first-child,
+.pre-div:first-child {
     margin-top: 20px;
 }
 
