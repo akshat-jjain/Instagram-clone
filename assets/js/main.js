@@ -47,7 +47,7 @@ for (let i = 0; i < allPosts.length; i++) {
             <div class="profile-pic">
                 <img src="${users[username].pic}" alt="" class="profile-img" oncontextmenu="return false;">
             </div>
-            <a href="/Instagram-clone/profile/?u=${username}"><p class="username">${username}</p></a>
+            <a href="./profile/?u=${username}"><p class="username">${username}</p></a>
         </div>
         <svg aria-label="More options" class="options" color="#262626" fill="#262626"
             height="24" role="img" viewBox="0 0 24 24" width="24">
@@ -55,7 +55,9 @@ for (let i = 0; i < allPosts.length; i++) {
         </svg>
     </div>
     <div class="like-animation" id="${postId}-ani"></div>
+    <div class="post-img-block">
     <img src="${post.posts_img}" alt="" oncontextmenu="return false;" id="${postId}-img" ondblclick="Like(this.id)">
+    </div>
     <div class ="post-details">
     <div class ="post-reactions">
     <svg aria-label="Like" class ="like-ic-em rec-icon" color="#ed4956" fill="#262626" id="${postId}-like"
@@ -70,11 +72,11 @@ for (let i = 0; i < allPosts.length; i++) {
     <div class ="likes-div">
     <img src="${users[post.liked_by].pic}" alt="" oncontextmenu="return false;">
     <p class ="likes-cnt" id="${postId}-lcnt">
-    Liked by <span><a href="/Instagram-clone/profile/?u=${post.liked_by}">${post.liked_by}</a></span> and <span>${numWithCom(post.likes)} others</span>
+    Liked by <span><a href="./profile/?u=${post.liked_by}">${post.liked_by}</a></span> and <span>${numWithCom(post.likes)} others</span>
     </p>
     </div>
     <div class ="caption-div">
-    <span><a href="/Instagram-clone/profile/?u=${username}">${username}</a> </span>${post.caption}
+    <span><a href="./profile/?u=${username}">${username}</a> </span>${post.caption}
     </div>
     <div class="view-all-cmt">View all ${numWithCom(post.comments)} comments</div>
     <div class ="post-time">${dateFormat(post.post_time)}</div>
@@ -94,12 +96,12 @@ for (let i = 0; i < suggestions.length; i++) {
     <div class="suggest-card">
         <div class="s-userinfo">
             <div class="profile-pic">
-            <a href="/Instagram-clone/profile/?u=${suggestions[i].username}">
+            <a href="./profile/?u=${suggestions[i].username}">
                 <img src="${users[suggestions[i].username].pic}" alt="" class="profile-img">
             </a>
             </div>
             <div class="name-div">
-                <a href="/Instagram-clone/profile/?u=${suggestions[i].username}">
+                <a href="./profile/?u=${suggestions[i].username}">
                     <p class="username">${suggestions[i].username}</p>
                 </a>
                 <p class="fullname">Followed by ${suggestions[i].followed_by}</p>
