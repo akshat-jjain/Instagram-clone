@@ -1,1 +1,2 @@
-
+const getPost = "";
+document.title = "";
